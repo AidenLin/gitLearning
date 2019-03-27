@@ -20,6 +20,7 @@ GitHub
 		运行： git remote add origin 你复制的地址:
 
 一、git remote add origin git@github.com:AidenLin/resume-template.git
+git remote add origin git@github.com:AidenLin/gitLearning.git
 
 		如果你在创建 repository 的时候，加入了 README.md 或者 LICENSE ，那么 github 会拒绝你的 push 。
 二、你需要先执行 git pull origin master
