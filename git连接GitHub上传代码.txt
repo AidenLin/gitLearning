@@ -10,29 +10,40 @@
 
 GitHub
 
-	将远程仓库和本地仓库关联起来
+一、 将远程仓库和本地仓库关联起来
 	
 		先到Github上复制远程仓库的SSH地址:
 		git@github.com:AidenLin/resume-template.git
 
-		有两种方式可以关联，一种是SSH，一种是HTTPS。由于HTTPS比较慢，所以推荐使用SSH。注意SSH的地址格式是这样开头的： git@github.com
+		有两种方式可以关联，一种是SSH，一种是HTTPS。由于HTTPS比较慢，所以推荐使用SSH。
+		注意SSH的地址格式是这样开头的： git@github.com
 
 		运行： git remote add origin 你复制的地址:
 
-一、git remote add origin git@github.com:AidenLin/resume-template.git
-git remote add origin git@github.com:AidenLin/gitLearning.git
+	【例】	: git remote add origin git@github.com:AidenLin/resume-template.git
 
-		如果你在创建 repository 的时候，加入了 README.md 或者 LICENSE ，那么 github 会拒绝你的 push 。
-二、你需要先执行 git pull origin master
+	【注意】: 如果你在创建 repository 的时候，加入了 README.md 或者 LICENSE ，那么 github 会拒绝你的 push 。
+
+	若文件有修改，命令行中先 git fetch origin master ，再git push origin master
+	如果有README.md文件，因此文件没有下载下来，需要先在命令行 git pull --rebase origin master， 再执行git push -u origin master
+
+二、 你需要先执行 git pull origin master
+
+		可以通过如下命令进行代码合并【注】：pull=fetch+merge
+		git pull --rebase origin master
+		执行上面代码后可以看到本地代码库中多了README.md文件
 
 
-执行 git push -u origin master 将本地仓库上传至Github的仓库并进行关联:
+		执行 git push -u origin master 将本地仓库上传至Github的仓库并进行关联:
 
-关联已经完成！
+		关联已经完成！ 可以看到我们的本地项目已经上传到了github上了。
 
-以后想在commit后同步到Github上，只要直接执行 git push 就行啦!
+		以后想在commit后同步到Github上，只要直接执行 git push 就行啦!
+
+		【注意】：git是不能管理空的文件夹的，文件夹里必须有文件才能上传。
 
 
+【小贴士】
 解决中文乱码
 git config --global core.quotepath false
 
